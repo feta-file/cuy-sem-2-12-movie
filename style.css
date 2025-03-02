@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header {
+    background-color: #9affd8;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    align-items: center;
+}
+
+.searchInput {
+    background-color: transparent;
+    padding: 8px 16px;
+    border-radius: 10px;
+}
+
+#moviesElement {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 16px;
+    gap: 16px;
+    background-color: #eaeaea;
+}
+
+.movie {
+    width: 100%;
+    height: 550px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, .2);
+    padding: 8px 16px;
+}
+
+.movie img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+
+/* Pagination */
+
+.pagination {
+    display: flex;
+    width: 100%;
+    grid-gap: 16px;
+    justify-content: center;
+    align-items: center;
+    margin: 32px 0px;
+    /* margin 32px itu atas bawah, yang 0px itu kiri kanan */
+    color: #eaeaea;
+}
+
+#prev,
+#next,
+#currentPage {
+    background-color: cadetblue;
+    font-size: larger;
+    padding: 8px 16px;
+    /* padding 8px itu atas bawah, yang 16 px itu kiri kanan */
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 800;
+}
+
+#title {
+    cursor: pointer;
+    position: relative;
+}
+
+#title::after {
+    content: '';
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    width: 100%;
+    position: absolute;
+    height: 2px;
+    transition: transform .3s;
+    transform: scaleX(0);
+}
+
+#title:hover::after{
+    transform: scaleX(1);
+}
